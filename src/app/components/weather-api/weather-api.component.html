@@ -1,0 +1,55 @@
+<div class="mt-5">
+
+    <label for="location">Enter Location</label>
+
+    <div *ngIf="results">
+        <div class="app">
+            <div class="search">
+                <input type="text" #location />
+                <br />
+                <button (click)="search(location.value)">Get weather info</button>
+
+            </div>
+            <div class="container mt-8">
+               
+                    <div class="location">
+                        <p class='text-5xl'>{{results.name}}</p>
+                    </div>
+                    
+
+                    <div class="flex flex-row justify-between">
+
+                   
+
+                    <div>
+                        <div class="temp">
+
+                            <h2>{{results.main.temp}}°F</h2>
+                        </div>
+                        <div class="description">
+                           temperature
+                        </div>
+                    </div>
+
+                    
+
+                
+                    <div class="feels">
+                        <p class='bold'>{{results.main.feels_like}}°F</p>
+                        <p>Feels Like</p>
+                    </div>
+                    <div class="humidity">
+                        <p class='bold'>{{results.main.humidity}}%</p>
+                        <p>Humidity</p>
+                    </div>
+                    <div class="wind">
+                        <p class='bold'>{{results.sys.country}}
+                        </p>
+                        <p>Country</p>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>

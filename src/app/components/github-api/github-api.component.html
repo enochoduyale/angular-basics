@@ -1,0 +1,23 @@
+<div  class="mt-10">
+    <h1>Github Info</h1>
+
+    <h2 class="mt-4">Enter your username</h2>
+    <input type="text" #username (input)="search(username.value)" >
+
+  
+    <div *ngIf="user$ | async as user; else noUser">
+        <!-- User details rendering -->
+        <h1>{{ user.login }}</h1>
+        <img [src]="user.avatar_url" alt="User Avatar">
+        <p>Name: {{ user.name }}</p>
+        <p>Location: {{ user.location }}</p>
+        <!-- Add more user properties as needed -->
+      </div>
+
+
+      <ng-template #noUser>
+        <p>No user found.</p>
+      </ng-template>
+       
+
+</div>
